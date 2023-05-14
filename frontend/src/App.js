@@ -1,48 +1,23 @@
-//import logo from './logo.svg';
-//import './App.css';
-//
-//function App() {
-//  return (
-//    <div className="App">
-//      <header className="App-header">
-//        <img src={logo} className="App-logo" alt="logo" />
-//        <p>
-//          Edit <code>src/App.js</code> and save to reload.
-//        </p>
-//        <a
-//          className="App-link"
-//          href="https://reactjs.org"
-//          target="_blank"
-//          rel="noopener noreferrer"
-//        >
-//          Learn React
-//        </a>
-//      </header>
-//    </div>
-//  );
-//}
-//
-//export default App;
-
-
-import React from 'react';
-
+import React, {useState} from 'react';
 import './App.css';
+import { Login } from "./Login.js";
+import { Register } from "./Register.js";
 
-import Dashboard from './components/Dashboard/Dashboard';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+function App(){
+    const [currentForm, setCurrentForm] = useState('login');
+    const toggleForm = (formName) => {
+        setCurrentForm(formName);
+    }
 
-import Preferences from './components/Preferences/Preferences';
+    return(
 
-function App() {
+        <div className="App">
+            {
+                currentForm == "login" ? <Login onFormSwitch={toggleForm}/> : <Register onFormSwitch={toggleForm}/>
+            }
+        </div>
 
-  return (
-    <>
-    <Dashboard/>
-    <Preferences/>
-    </>
-
-  );
+    );
 
 }
 
