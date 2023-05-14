@@ -1,7 +1,6 @@
+import { signInWithEmailAndPassword } from 'firebase/auth'
 import React, {useState} from 'react';
-
-
-
+import { auth } from './firebase';
 
     export const Login = (props) => {
 
@@ -10,7 +9,12 @@ import React, {useState} from 'react';
 
         const handleSubmit = (e) => {
             e.preventDefault();
-            console.log(email)
+            signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+            console.log(userCredential)
+            }).catch((error) => {
+            console.log(error)});
+//            console.log(email)
         }
 
         return(
@@ -20,8 +24,8 @@ import React, {useState} from 'react';
                 <label htmlFor="email">Email</label>
                 <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Enter your email id" id="email" name="email"/>
 
-                <label htmlF="email">Password</label>
-                <input value={password} onChange={(e) => setPassword(e.target.password)}type="password" placeholder="********" id="password" name="password"/>
+                <label htmlFor="password">Password</label>
+                <input value={password} onChange={({target: {value}}) => setPassword(value)} type="password" placeholder="********" id="password" name="password"/>
 
                 <button> Login </button>
             </form>

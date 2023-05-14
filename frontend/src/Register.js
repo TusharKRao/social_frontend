@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import { createUserWithEmailAndPassword } from 'firebase/auth'
+import { auth } from './firebase';
 
 
     export const Register = (props) => {
@@ -10,13 +12,20 @@ import React, {useState} from 'react';
            const handleSubmit = (e) => {
                e.preventDefault();
                console.log(email)
-               console.log(name)
+               console.log(password)
+               createUserWithEmailAndPassword(auth, email, password)
+               .then((userCredential) => {
+               console.log(userCredential)
+               }).catch((error) => {
+               console.log(error)});
+
+
            }
 
 
         return(
             <div className="auth-form-container">
-                <h2>Register</h2>
+                <h2>Register a new account!</h2>
                 <form className="register-form" onSubmit={handleSubmit}>
                     <label htmlFor="name">Full Name</label>
                     <input value={name} onChange={(e) => setName(e.target.value)} type="name" placeholder="Enter your full name" id="name" name="name"/>
@@ -24,10 +33,10 @@ import React, {useState} from 'react';
                     <label htmlFor="email">Email</label>
                     <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Enter your email id" id="email" name="email"/>
 
-                    <label htmlF="email">Set Password</label>
-                    <input value={password} onChange={(e) => setPassword(e.target.password)}type="password" placeholder="********" id="password" name="password"/>
+                    <label htmlFor="password">Set Password</label>
+                    <input value={password} onChange={({target: {value}}) => setPassword(value)} type="password" placeholder="********" id="password" name="password"/>
 
-                    <button> Login </button>
+                    <button> Register </button>
                 </form>
 
                 <button className="link-btn" onClick={() => props.onFormSwitch('login')}> Already have account? The login Dammit! </button>
