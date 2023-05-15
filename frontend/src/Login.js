@@ -1,7 +1,7 @@
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import React, {useState} from 'react';
 import { auth } from './firebase';
-
+import mainLogo from'./resourcefiles/finstaglam_logo.png';
     export const Login = (props) => {
 
         const [email, setEmail] = useState('');
@@ -18,20 +18,24 @@ import { auth } from './firebase';
         }
 
         return(
-        <div className="auth-form-container">
-            <h2>Login</h2>
-            <form className="login-form" onSubmit={handleSubmit}>
-                <label htmlFor="email">Email</label>
-                <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Enter your email id" id="email" name="email"/>
+        <div className="main-container">
+            <div className="auth-form-container">
+                <img className="logo" src={mainLogo}  alt="shit" />
 
-                <label htmlFor="password">Password</label>
-                <input value={password} onChange={({target: {value}}) => setPassword(value)} type="password" placeholder="********" id="password" name="password"/>
+                <h2>Login</h2>
+                <form className="login-form" onSubmit={handleSubmit}>
+                    <label htmlFor="email">Email</label>
+                    <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Enter your email id" id="email" name="email"/>
 
-                <button> Login </button>
-            </form>
+                    <label htmlFor="password">Password</label>
+                    <input value={password} onChange={({target: {value}}) => setPassword(value)} type="password" placeholder="********" id="password" name="password"/>
 
-            <button className="link-btn" onClick={() => props.onFormSwitch('register')}> Don't have account? Make a new one dawg! </button>
+                    <button> Login </button>
+                </form>
 
+                <button className="link-btn" onClick={() => props.onFormSwitch('register')}> Don't have account? Make a new one dawg! </button>
+
+            </div>
         </div>
         )
 
