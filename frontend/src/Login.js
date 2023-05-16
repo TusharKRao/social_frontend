@@ -14,24 +14,9 @@ import mainLogo from'./resourcefiles/finstaglam_logo.png';
             console.log(userCredential)
             }).catch((error) => {
             console.log(error)});
-//            console.log(email)
         }
 
         return(
-//        <div id="wrapper">
-//            <div className="auth-form-container">
-//                <img className="logo" src={mainLogo}  alt="shit" />
-//                <form className="login-form" onSubmit={handleSubmit}>
-//                    <input className="input-auth" value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Enter your email id" id="email" name="email"/>
-//                    <input className="input-auth" value={password} onChange={({target: {value}}) => setPassword(value)} type="password" placeholder="Password" id="password" name="password"/>
-//
-//                    <button className="login-btn"> Log in </button>
-//                </form>
-//            </div>
-//            <div className="register-link-container">
-//                <button className="link-btn" onClick={() => props.onFormSwitch('register')}> Don't have account? Make a new one dawg! </button>
-//            </div>
-//        </div>
 
         <div id="wrapper">
           <div class="main-content">
