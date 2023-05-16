@@ -17,17 +17,9 @@ export const MainPage = (props) => {
     }, []);
 
 
-    if(!authenticated){
-        return(
-//            <Navigate replace to='/login' />
-        <p>you got here</p>
+    return(
+            <div> MAIN-PAGE </div>
         );
-    }
-    else{
-        return(
-                <div> MAIN-PAGE </div>
-            );
-    }
 
 
 }
