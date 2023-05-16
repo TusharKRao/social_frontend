@@ -2,6 +2,15 @@ import React, {useEffect, useState} from 'react';
 import { Navigate } from 'react-router-dom';
 import {useLocation} from 'react-router-dom';
 
+import React from 'react';
+import {
+  Nav,
+  NavLink,
+  Bars,
+  NavMenu,
+  NavBtn,
+  NavBtnLink,
+} from './NavbarElements';
 
 export const MainPage = (props) => {
 
@@ -9,8 +18,7 @@ export const MainPage = (props) => {
     const location = useLocation();
     console.log(location.state.test);
     useEffect(() => {
-    const loggedInUser = localStorage.getItem("authenticated");
-//    console.log(loggedInUser);
+        const loggedInUser = localStorage.getItem("authenticated");
         if (loggedInUser) {
             setAuthenticated(loggedInUser);
         }
@@ -18,8 +26,38 @@ export const MainPage = (props) => {
 
 
     return(
-            <div> MAIN-PAGE </div>
-        );
+              <>
+                <Nav>
+                  <Bars />
+
+                  <NavMenu>
+                    <NavLink to='/about' activeStyle>
+                      About
+                    </NavLink>
+                    <NavLink to='/events' activeStyle>
+                      Events
+                    </NavLink>
+                    <NavLink to='/annual' activeStyle>
+                      Annual Report
+                    </NavLink>
+                    <NavLink to='/team' activeStyle>
+                      Teams
+                    </NavLink>
+                    <NavLink to='/blogs' activeStyle>
+                      Blogs
+                    </NavLink>
+                    <NavLink to='/sign-up' activeStyle>
+                      Sign Up
+                    </NavLink>
+                    {/* Second Nav */}
+                    {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
+                  </NavMenu>
+                  <NavBtn>
+                    <NavBtnLink to='/signin'>Sign In</NavBtnLink>
+                  </NavBtn>
+                </Nav>
+              </>
+            );
 
 
 }
