@@ -44,7 +44,7 @@ import mainLogo from'./resourcefiles/finstaglam_logo.png';
                       </div>
                       <div class="sub-content">
                         <div class="s-part">
-                          Already have an account?<a href="#" onClick={() => props.onFormSwitch('login')}>Log in</a>
+                          Already have an account? <a href="#" onClick={() => props.onFormSwitch('login')}>Log in</a>
                         </div>
                       </div>
                     </div>
