@@ -2,6 +2,8 @@ import { signInWithEmailAndPassword } from 'firebase/auth'
 import React, {useState} from 'react';
 import { auth } from './firebase';
 import mainLogo from'./resourcefiles/finstaglam_logo.png';
+import MainPage from './MainPageComponents/MainPage';
+
     export const Login = (props) => {
 
         const [email, setEmail] = useState('');
@@ -12,6 +14,9 @@ import mainLogo from'./resourcefiles/finstaglam_logo.png';
             signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
             console.log(userCredential)
+
+
+
             }).catch((error) => {
             console.log(error)});
         }
@@ -41,3 +46,4 @@ import mainLogo from'./resourcefiles/finstaglam_logo.png';
         )
 
     }
+
