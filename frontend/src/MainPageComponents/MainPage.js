@@ -33,10 +33,21 @@ export const MainPage = () => {
     menuCollapse ? setMenuCollapse(false) : setMenuCollapse(true);
   };
 
+
+
+  //    const [authenticated, setAuthenticated] = useState(null);
+  //    const location = useLocation();
+  //    console.log(location.state.test);
+  //    useEffect(() => {
+  //        const loggedInUser = localStorage.getItem("authenticated");
+  //        if (loggedInUser) {
+  //            setAuthenticated(loggedInUser);
+  //        }
+  //    }, []);
+
   return (
     <>
       <div id="header">
-          {/* collapsed props to change menu size using menucollapse state */}
         <ProSidebar collapsed={menuCollapse}>
           <SidebarHeader>
           <div className="logotext">
@@ -76,14 +87,6 @@ export const MainPage = () => {
 
 
 
-//    const [authenticated, setAuthenticated] = useState(null);
-//    const location = useLocation();
-//    console.log(location.state.test);
-//    useEffect(() => {
-//        const loggedInUser = localStorage.getItem("authenticated");
-//        if (loggedInUser) {
-//            setAuthenticated(loggedInUser);
-//        }
-//    }, []);
+
 
 
