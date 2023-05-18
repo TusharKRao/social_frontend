@@ -10,7 +10,7 @@ function App(){
     }
 
     return(
-
+            //change this to router manipulation. future work
         <div className="App">
             {
                 currentForm == "login" ? <Login onFormSwitch={toggleForm}/> : <Register onFormSwitch={toggleForm}/>
