@@ -45,10 +45,9 @@ export const MainPage = () => {
   //        }
   //    }, []);
 
-
   return (
     <>
-        <div>
+      <div>
             <ProSidebar>
                 <SidebarHeader>
                     <p>Logo</p>
