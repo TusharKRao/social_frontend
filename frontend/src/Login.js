@@ -33,6 +33,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
         return(
+        //180x58px
             <div id="wrapper">
                   <div class="main-content">
                     <div class="header">
