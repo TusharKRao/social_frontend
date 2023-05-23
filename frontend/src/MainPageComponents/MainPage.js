@@ -47,10 +47,15 @@ export const MainPage = () => {
 
   return (
     <>
-      <div>
+      <div id="header">
             <ProSidebar>
                 <SidebarHeader>
-                    <p>Logo</p>
+                    <div className="MenuLogo">
+                        {menuCollapse ? <img src="https://i.imgur.com/zqpwkLQ.png" width="100"/>: <img  src="https://i.imgur.com/zqpwkLQ.png" />}
+                    </div>
+                    <div className="closemenu" onClick={menuIconClick}>
+                        {menuCollapse ? (<FiArrowRightCircle/>) : (<FiArrowLeftCircle/>)}
+                    </div>
                 </SidebarHeader>
             </ProSidebar>
         </div>
