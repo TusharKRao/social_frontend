@@ -10,10 +10,12 @@ import {
   SidebarContent,
 } from "react-pro-sidebar";
 
+import { FiSearch } from "react-icons/fi";
+import { MdOutlineExplore, MdDarkMode, MdOutlineDarkMode } from "react-icons/md"
 //import icons from react icons
 import { FaList, FaRegHeart } from "react-icons/fa";
 import { FiHome, FiLogOut, FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
-import { RiPencilLine } from "react-icons/ri";
+import { RiMessengerLine } from "react-icons/ri";
 import { BiCog } from "react-icons/bi";
 
 
@@ -48,15 +50,26 @@ export const MainPage = () => {
   return (
     <>
       <div id="header">
-            <ProSidebar>
+            <ProSidebar collapsed={menuCollapse}>
                 <SidebarHeader>
-                    <div className="MenuLogo">
-                        {menuCollapse ? <img src="https://i.imgur.com/zqpwkLQ.png" width="100"/>: <img  src="https://i.imgur.com/zqpwkLQ.png" />}
+                    <div className="logoText">
+                        {menuCollapse ? <img src="https://i.imgur.com/zqpwkLQ.png" width="75"/>: <img  src="https://i.imgur.com/zqpwkLQ.png" />}
                     </div>
                     <div className="closemenu" onClick={menuIconClick}>
                         {menuCollapse ? (<FiArrowRightCircle/>) : (<FiArrowLeftCircle/>)}
                     </div>
                 </SidebarHeader>
+                <SidebarContent>
+                    <Menu iconShape="square">
+                      <MenuItem active={true} icon={<FiHome />}>
+                        Home
+                      </MenuItem>
+                      <MenuItem icon={<FiSearch />}>Search</MenuItem>
+                      <MenuItem icon={<MdOutlineExplore />}>Explore</MenuItem>
+                      <MenuItem icon={<RiMessengerLine />}>Messages</MenuItem>
+                      <MenuItem icon={<MdOutlineDarkMode />}>Dark Mode</MenuItem>
+                    </Menu>
+                </SidebarContent>
             </ProSidebar>
         </div>
     </>
