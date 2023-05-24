@@ -61,9 +61,7 @@ export const MainPage = () => {
                 </SidebarHeader>
                 <SidebarContent>
                     <Menu iconShape="square">
-                      <MenuItem active={true} icon={<FiHome />}>
-                        Home
-                      </MenuItem>
+                      <MenuItem active={true} icon={<FiHome />}>Home</MenuItem>
                       <MenuItem icon={<FiSearch />}>Search</MenuItem>
                       <MenuItem icon={<MdOutlineExplore />}>Explore</MenuItem>
                       <MenuItem icon={<RiMessengerLine />}>Messages</MenuItem>
