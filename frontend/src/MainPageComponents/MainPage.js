@@ -59,6 +59,7 @@ export const MainPage = () => {
                         {menuCollapse ? (<FiArrowRightCircle/>) : (<FiArrowLeftCircle/>)}
                     </div>
                 </SidebarHeader>
+
                 <SidebarContent>
                     <Menu iconShape="square">
                       <MenuItem active={true} icon={<FiHome />}>Home</MenuItem>
