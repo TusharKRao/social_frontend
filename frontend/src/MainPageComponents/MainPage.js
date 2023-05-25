@@ -47,6 +47,7 @@ export const MainPage = () => {
   //        }
   //    }, []);
 
+
   return (
     <>
       <div id="header">
